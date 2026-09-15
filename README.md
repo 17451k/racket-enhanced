@@ -1,4 +1,4 @@
-# Racket Enhanced
+# Racket
 
 A syntax definition for the [Racket](https://racket-lang.org) programming
 language for Sublime Text 4.
@@ -18,24 +18,12 @@ file, matching `#lang at-exp racket` semantics.
 ## Installation
 
 Via Package Control: `Package Control: Install Package`, then choose
-**Racket Enhanced**.
+**Racket**.
 
-If the older `Racket` package is also installed, both claim the
-`source.racket` scope and the `.rkt` extension. Remove it
-(`Package Control: Remove Package`) or add `"Racket"` to `ignored_packages`
-in `Preferences: Settings`. Tabs that were already open keep their previous
-syntax; reopen them.
+## Features
 
-## Why another Racket package
-
-The existing `Racket` package on Package Control is a Sublime Text 2
-`.tmLanguage` file, unchanged since 2019. It has nine rules: comments,
-strings, numbers, a short hand-written keyword list, and a `define`/`struct`
-pattern. Everything else in a file is unscoped, so a colour scheme can do
-little with it.
-
-This package is a `.sublime-syntax` written from scratch for the Sublime
-Text 4 engine. The differences are:
+The syntax is a `.sublime-syntax` written from scratch for the Sublime
+Text 4 engine.
 
 - **Complete generated identifier lists.** All 413 special
   forms, 2135 procedures and 125 values exported by the `racket` module
@@ -62,7 +50,6 @@ Text 4 engine. The differences are:
   like `#\a`, `#\space`, `#\x41`. Keywords like `#:name`. Numbers with
   prefixes such as `#x1F`, `#b101`, `#e1.5`, fractions `1/3`, and
   `+inf.0`. Quote marks `'`, `` ` ``, `,`, `,@`, `#'`, `#,`. Vector and
-  hash literals `#(1 2)`, `#hash((a . 1))`. The old package handles only
-  comments, plain strings and integers.
+  hash literals `#(1 2)`, `#hash((a . 1))`.
 
 Known limitations can be found in the [dev docs](./docs/dev.md).

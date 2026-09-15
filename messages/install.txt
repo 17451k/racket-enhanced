@@ -1,17 +1,13 @@
-Racket Enhanced
-===============
+Racket
+======
 
-Thanks for installing.
+Thanks for installing. Racket syntax highlighting is now active for .rkt,
+.rktl and .rktd files, and Scribble highlighting for .scrbl files.
 
-If you also have the "Racket" package installed, both packages claim the
-`source.racket` scope and the .rkt extension, and Sublime may pick either one.
-Disable the old package:
+What you get now:
+  - Goto Symbol (Ctrl/Cmd+R) lists every defined function and struct.
+  - Toggle Comment (Ctrl/Cmd+/) inserts "; "; block comment inserts #| |#.
+  - Enter after an open bracket indents; a close bracket outdents.
+  - Double-click selects whole identifiers such as string->list or null?.
 
-  Preferences > Settings, then add "Racket" to "ignored_packages":
-
-    "ignored_packages": ["Racket", "Vintage"],
-
-or uninstall it via Package Control: Remove Package > Racket.
-
-Already-open .rkt tabs keep their previous syntax; reopen them, or use
-View > Syntax > Open all with current extension as... > Racket.
+Please report highlighting problems if you encounter one, preferably with a minimal snippet.

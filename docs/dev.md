@@ -35,6 +35,10 @@ python3 tools/check.py
 
 ## Scopes used
 
+Scopes follow the standard Sublime naming (keyword.control, support.function,
+variable.parameter, entity.name.function, ...), so any scheme works. Use
+Tools > Developer > Show Scope Name to see the scope under the cursor.
+
 | Construct | Scope |
 |---|---|
 | `;` line comment | `comment.line.semicolon.racket` |
