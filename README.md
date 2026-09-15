@@ -1,17 +1,22 @@
 # Racket
 
-A syntax definition for the [Racket](https://racket-lang.org) programming
-language for Sublime Text 4.
-
-This package ships no build system, REPL, completion, or
-language-server integration. For those, use a Sublime build system of your
-own or the [LSP](https://packagecontrol.io/packages/LSP) package with
-[racket-langserver](https://github.com/jeapostrophe/racket-langserver).
+A Sublime Text 4 plugin for the [Racket](https://racket-lang.org) programming language.
 
 Supported extensions: `.rkt`, `.rktl`, `.rktd` (Racket syntax) and `.scrbl`
 (Scribble syntax: prose text with `@`-expressions, sharing every rule with
 the Racket syntax). `.rkt` files understand `@`-expressions anywhere in the
 file, matching `#lang at-exp racket` semantics.
+
+Current features include:
+- syntax definition and highlighting: every Racket form and literal is scoped
+- build system: run, test, compile and format from command palette
+- symbol indexing: `Goto Symbol` lists defined functions and structs
+- comment settings: `Toggle Comment` uses `;` and `#| |#`
+- bracket handling: auto-indent after an open bracket, outdent on close
+
+No REPL, completion, or language-server integration is available. For those,
+use the [LSP](https://packagecontrol.io/packages/LSP) package with
+[racket-langserver](https://github.com/jeapostrophe/racket-langserver).
 
 <img src="docs/example.png" width="956" alt="Racket source highlighted by this package, using the Monokai Pro Light colour scheme">
 
@@ -21,6 +26,8 @@ Via Package Control: `Package Control: Install Package`, then choose
 **Racket**.
 
 ## Features
+
+### Syntax definition
 
 The syntax is a `.sublime-syntax` written from scratch for the Sublime
 Text 4 engine.
@@ -53,3 +60,22 @@ Text 4 engine.
   hash literals `#(1 2)`, `#hash((a . 1))`.
 
 Known limitations can be found in the [dev docs](./docs/dev.md).
+
+### Build system
+
+A build system is included (`Tools > Build With...`):
+- **Run** (`racket`): runs the current file and shows its output
+- **Test** and **Test Directory** (`raco test`): runs `test` submodules and
+  `rackunit` tests in the current file, or in every file under its directory
+- **Compile** (`raco make`): compiles to bytecode without running, so it
+  reports syntax and unbound-identifier errors quickly
+- **Format** (`raco fmt -i`, needs `raco pkg install fmt`): reformats the
+  current file in place
+- **Expand** (`raco expand`): prints the fully macro-expanded program, useful
+  for seeing what a macro produces
+- **Check Requires** (`raco check-requires`): reports `require`d modules that
+  are unused or could be narrowed
+
+Error locations in the output panel are clickable.
+`racket` and `raco` must be on the `PATH` Sublime sees; on macOS that is the
+login shell's `PATH` when launched from the Dock.

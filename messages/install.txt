@@ -9,5 +9,9 @@ What you get now:
   - Toggle Comment (Ctrl/Cmd+/) inserts "; "; block comment inserts #| |#.
   - Enter after an open bracket indents; a close bracket outdents.
   - Double-click selects whole identifiers such as string->list or null?.
+  - Build system (Tools > Build With...): Run, Test, Test Directory, Compile,
+    Format (needs `raco pkg install fmt`), Expand, Check Requires. Error
+    locations in the output are clickable. racket and raco must be on the
+    PATH Sublime sees.
 
 Please report highlighting problems if you encounter one, preferably with a minimal snippet.
